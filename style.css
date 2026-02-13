@@ -75,3 +75,22 @@ h1 {
   color: #764ba2;
   font-weight: bold;
 }
+
+.flip-card-back {
+  background: #764ba2;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-card-back ul {
+  list-style: none;
+  padding: 0;
+}
+
+.flip-card-back li {
+  margin-bottom: 8px;
+  font-size: 1em;
+}

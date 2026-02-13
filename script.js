@@ -1,68 +1,71 @@
 const chemicals = [
   {
-    name: "water",
+    name: "Copper",
+    formula: "Cu",
+    facts: [
+      "Copper is that reddish metal you see in wires and old pennies.",
+      "It conducts electricity super well, which is why it's in cables.",
+    ]
+  },
+  {
+    name: "Carbon Dioxide",
+    formula: "CO₂",
+    facts: [
+      "We breathe out CO₂ every time we exhale.",
+      "Plants eat CO₂ and turn it into oxygen for us.",
+    ]
+  },
+  {
+    name: "Water",
     formula: "H₂O",
     facts: [
       "Water is literally everywhere and we drink it everyday.",
       "It doesn't mix with oil no matter how hard you shake it.",
       "Ice floats because it's actually less dense than liquid water.",
       "Water can absorb a lot of heat before getting hot.",
-      ]
-},
-{
-  name: "Copper",
-  formula: "Cu",
-  facts: [
-    "copper is that reddish metal you see in wires and old pennies.",
-    "it conducts electricity super well, which is why its in cables.",
     ]
-},
-  {
-    name: "Carbon Dioxide",
-    formula: "CO₂",
-    facts: [
-      "we breathe out CO₂ every time we exhale.",
-      "plants eat CO₂",
-      }
-  function rendercards() {
-    const container = document.getelementbyid("cards-container");
-
-    chemicals.forEach(chemical => {
-      const flipcard = document.createlement("div);
-      flipcard.classname = "flip-card";
-
-      const inner = document.createlelement("div");
-      inner.classname = "flip-card-inner";
-
-      const front = document.createelement("div");
-      front.classname = "flip-card-front";
-
-      const title = document.createelement("p");
-      formula.innerHTML = chemical.formula;
-
-      front.appendchild(title);
-      front.appendchild(formula);
-
-      const back = document.createlement("div");
-      back.classname = "flip-card-back";
-
-      const list = document.createlement("ul");
-      chemical.facts.forEach(fact => {
-        const li = document.createlement("li")
-        li.textcontent = fact;
-        list.appendchild(li);
-      });
-
-      back.appendchild(list);
-
-      inner.appendchild(front);
-      inner.appendchild(back);
-      flipcard.appendchild(inner);
-      container.appendchild(flipcard);
-    });
   }
+];
+
+function renderCards() {
+  const container = document.getElementById("cards-container");
+
+  chemicals.forEach(chemical => {
+    const flipCard = document.createElement("div");
+    flipCard.className = "flip-card";
+
+    const inner = document.createElement("div");
+    inner.className = "flip-card-inner";
+
+    const front = document.createElement("div");
+    front.className = "flip-card-front";
+
+    const title = document.createElement("h2");
+    title.textContent = chemical.name;
+
+    const formula = document.createElement("p");
+    formula.innerHTML = chemical.formula;
+
+    front.appendChild(title);
+    front.appendChild(formula);
+
+    const back = document.createElement("div");
+    back.className = "flip-card-back";
+
+    const list = document.createElement("ul");
+    chemical.facts.forEach(fact => {
+      const li = document.createElement("li");
+      li.textContent = fact;
+      list.appendChild(li);
+    });
+
+    back.appendChild(list);
+
+    inner.appendChild(front);
+    inner.appendChild(back);
+    flipCard.appendChild(inner);
+    container.appendChild(flipCard);
+  });
+}
 
 document.addEventListener("DOMContentLoaded", renderCards);
-      
-    
-    
