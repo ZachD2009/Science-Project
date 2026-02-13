@@ -62,6 +62,7 @@ h1 {
 
 .flip-card-front {
   background: white;
+  z-index: 2;
 }
 
 .flip-card-front h2 {
